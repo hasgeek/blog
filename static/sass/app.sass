@@ -1,3 +1,5 @@
+@import "compass"
+
 $font-size: 16px
 $line-height: 22px
 
@@ -11,7 +13,7 @@ p, ul, ol, blockquote, table, dl, blockquote p
 .post
   margin-bottom: 1.5em
 
-.post-title
+.post-title, .page-header h1
   margin-top: 0
   margin-bottom: 0
 
@@ -22,8 +24,22 @@ p, ul, ol, blockquote, table, dl, blockquote p
   font-size: 14px
   line-height: 1.5
 
+h1
+  color: #df5e0e
+
+h2, h3, h4, h5, h6
+  color: #816894
+
 h3.post-date
   color: #999
   font-weight: normal
   & + h2, & + h1
     margin-top: 0
+
+#logo
+  @include replace-text-with-dimensions('logo.png')
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5)
+  #logo
+    background-image: image-url('logo@2x.png')
+    -webkit-background-size: image-width('logo.png') image-height('logo.png')
